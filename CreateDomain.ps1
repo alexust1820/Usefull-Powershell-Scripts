@@ -5,7 +5,9 @@ $netbios = 'DC1KUSTOV' #Данная переменная не должна со
 $passwd = 'P@ssw0rd'
 
 #Установка всех необходимых пакетов
-Install-WindowsFeature AD-Domain-Services
+Install-WindowsFeature AD-Domain-Services `
+    -IncludeAllSubFeature `
+    -IncludeManagementTools
 
 #Создание домена
 Install-ADDSForest `
